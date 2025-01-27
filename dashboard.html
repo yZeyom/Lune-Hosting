@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lune Hosting | Início</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .header-buttons a button:hover {
+            background-color: #062e7c;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .desc-plan-container {
+            display: inline-block;
+            padding: 3rem;
+            border: 2px solid #141414;
+            border-radius: 12px;
+            background-color: #141414;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .desc-plan {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .desc-plan2 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .new-btn {
+            color: #ffffff;
+            background-color: #0f3c96;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .new-btn:hover {
+            background-color: #062e7c;
+        }
+
+        .plan-type {
+            color: rgb(255, 255, 255);
+            padding: 0.25rem;
+            background-color: rgb(55, 55, 55);
+            border-radius: 8px;
+        }
+
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lune Hosting</h1>             
+        <div class="header-buttons">
+            <a href="index.html"><button>Início</button></a>
+            <a href="planos.html"><button>Planos</button></a>
+            <a href="documentos.html"><button>Documentos</button></a>
+            <a href="login.html"><button>Login</button></a>
+        </div>
+    </header>
+    <main>
+        <div class="desc-plan-container">
+            <img id="user-avatar" src="default-avatar.png" alt="Perfil" class="profile-picture">
+            <h1 class="desc-plan" id="username">Lune Hosting <a class="plan-type">- Plano: Free</a></h1>
+            <p class="desc-plan2">Sites e Bots Hospedados:</p>
+            <button class="new-btn" onclick="window.location.href='planos.html'">+ ADD APP</button>
+        </div>             
+        <section class="hosting-section">
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>VS Code</h3>
+                <div class="download-buttons">
+                    <img src="https://img.icons8.com/?size=512&id=108792&format=png" alt="Win">
+                    <img src="https://img.icons8.com/ios_filled/512/FFFFFF/mac-os.png" alt="Mac">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124995.png" alt="Linux">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="planos.html">Planos</a></li>
+                    <li><a href="index.html">Sobre</a></li>
+                    <li><a href="#">Brand</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Como Hospedar?</a></li>
+                    <li><a href="discord.html">Fale Conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Formas de pagamento</h3>
+                <div class="payment-icons">
+                    <img src="https://img.icons8.com/color/512/pix.png" alt="Pix">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png" alt="Cartão de Crédito">
+                    <img src="https://logospng.org/download/mercado-pago/logo-mercado-pago-icone-1024.png" alt="Mercado Pago">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
+        </div>
+    </footer>    
+</body>
+</html>
+
+<script>
+    function loginWithGitHub() {
+    const CLIENT_ID = "Ov23liKDMeACPWHnA2xa";
+    const redirectUri = "http://localhost:3000/callback";
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}`;
+    window.location.href = githubAuthUrl;
+}
+    window.onload = () => {
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get("username");
+        const avatarUrl = params.get("avatar");
+
+        if (username && avatarUrl) {
+            document.getElementById("username").innerText = `@${username}`;
+            document.getElementById("user-avatar").src = avatarUrl;
+        }
+    };
+</script>

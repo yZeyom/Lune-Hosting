@@ -6,7 +6,6 @@
     <title>Lune Hosting | Login</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
         .git-login {
             font-weight: bold;
             color: #000000;
@@ -20,25 +19,6 @@
             margin-top: 120px;
             background-size: 16px 16px;
             padding-left: 24px;
-        }
-
-        .dc-login {
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #0059e9;
-            padding: 0.5rem 2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-            margin-top: 120px;
-            background-size: 16px 16px;
-            padding-left: 24px;
-        }
-
-        .dc-login:hover {
-            background-color: #003c9c;
         }
 
         .git-login:hover {
@@ -67,7 +47,6 @@
             color: #bdbdbd;
             font-weight: bold;
         }
-
     </style>
 </head>
 <body>
@@ -84,15 +63,13 @@
         <div class="login-container">
             <h1 class="desc-plan">Login</h1>
             <p class="desc-lo">Para realizar qualquer ação dentro do site</p>
-            <p class="desc-lo2">você precisa conectar em alguma das opções abaixo.</p>
-            <button class="git-login">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon" style="width: 16px; height: 16px; margin-right: 8px;">
-                Login GitHub
-            </button>
-            <button class="dc-login">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord Icon" style="width: 16px; height: 16px; margin-right: 8px;">
-                Login Discord
-            </button>
+            <p class="desc-lo2">você precisa se conectar com GitHub.</p>
+            <a href="https://github.com/login/oauth/authorize?client_id=Ov23liKDMeACPWHnA2xa">
+                <button class="git-login">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon" style="width: 16px; height: 16px; margin-right: 8px;">
+                    Login GitHub
+                </button>
+            </a>            
         </div>
     </main>
     <footer class="site-footer">
