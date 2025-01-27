@@ -78,7 +78,7 @@
                 <div class="plan-header">
                     <h2 class="plan-title" id="iron-title">Iron</h2>
                     <span class="plan-ram">
-                        <span class="ram-size">4 GB</span> <span class="ram-label"> RAM</span>
+                        <span class="ram-size2">2 GB</span> <span class="ram-label"> RAM</span>
                     </span>
                 </div>
                 <div class="plan-details">
@@ -156,22 +156,25 @@
     const planCpu = document.getElementById('cpu-info');
     const planStorage = document.getElementById('storage-info');
     const planNet = document.getElementById('network-info');
+    const ram = document.querySelector('.ram-size2');
 
     const plans = [
-        { name: 'Iron', price: '10,00', cpu: "1 vCPU", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
-        { name: 'Gold', price: '20,00', cpu: "2 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
-        { name: 'Diamond', price: '30,00', cpu: "4 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
-        { name: 'Ruby', price: '40,00', cpu: "6 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #530202, #0d0d0d)' },
-        { name: 'Kriptonita', price: '150,00', cpu: "12 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #025324, #0d0d0d)' },
+        { name: 'Iron', price: '10,00', ram: "2 GB", cpu: "1 vCPU", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
+        { name: 'Gold', price: '20,00', ram: "4 GB", cpu: "2 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
+        { name: 'Diamond', price: '30,00', ram: "8 GB", cpu: "4 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
+        { name: 'Ruby', price: '40,00', ram: "16 GB", cpu: "8 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #4b0000, #0d0d0d)' },
+        { name: 'Emerald', price: '50,00', ram: "32 GB", cpu: "16 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #004b1a, #0d0d0d)' },
     ];
 
     slider.addEventListener('input', () => {
-        const selectedPlan = plans[slider.value];
+        const value = slider.value;
+        const selectedPlan = plans[value];
+        ram.textContent = selectedPlan.ram;
         planTitle.textContent = selectedPlan.name;
         planPrice.textContent = selectedPlan.price;
+        planCpu.textContent = selectedPlan.cpu;
+        planStorage.textContent = selectedPlan.storage;
+        planNet.textContent = selectedPlan.network;
         planCard.style.background = selectedPlan.gradient;
-        planCpu.innerHTML = `<img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.cpu}`;
-        planStorage.innerHTML = `<img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.storage}`;
-        planNet.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.network}`;
     });
 </script>
