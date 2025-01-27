@@ -1,0 +1,382 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #070707;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000000;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #00000000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons button:hover {
+    color: #6eff6e;
+}
+
+main {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+main p {
+    font-size: 1rem;
+    margin: 0 0 20px;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.plan-card {
+    background: linear-gradient(to right, #232323, #0d0d0d);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.plan-card3 {
+    background: linear-gradient(to right, #232323, #0d0d0d);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 0.2rem;
+}
+
+.plan-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -0rem;
+    background: linear-gradient(to right, #969696, #5e5e5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.plan-ram {
+    font-size: 0.7rem;
+    align-items: baseline;
+    display: flex;
+}
+
+.ram-size {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #78d57b;
+}
+
+.ram-label {
+    color: #ffffff;
+}
+
+.plan-details {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.plan-details p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.plan-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.plan-price {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.plan-month {
+    color: #b3b3b3;
+}
+
+.free-button {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hosting-btn {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hosting-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.deschost {
+    font-weight: bold;
+    color: #a8a8a8;
+}
+
+.free-button:hover {
+    background-color: #d0d0d0;
+}
+
+.desc-plan {
+    font-size: 3rem;
+}
+
+.desc-plan2 {
+    font-size: 1.2rem;
+    color: #949494;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.site-footer {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.download-buttons button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.download-buttons img {
+    width: 50px;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+.download-buttons button:hover {
+    background-color: #666;
+}
+
+.payment-icons img {
+    width: 40px;
+    margin: 0 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.footer-bottom a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+#plan-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #a4a4a4;
+    border-radius: 5px;
+    outline: none;
+}
+
+#plan-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(129, 255, 129); 
+    cursor: pointer;
+}
+
+.hosting-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.hosting-icons img {
+    margin-top: 100px;
+    width: 90px;
+    height: auto;
+}
+
+
+.hosting-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.hosting-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hosting-content img {
+    width: 50px;
+    height: auto;
+    margin: 5px;
+}
+
+.hosting-content h2 {
+    margin-top: 20px;
+}
+
+.titlehost {
+    max-width: 600px;
+    margin-top: 100px;
+}
+
+.deschost {
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+.titlehost2 {
+    max-width: 600px;
+    margin-top: 80px;
+}
+
+.deschost2 {
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+.top-btn {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 120px;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lune Hosting | Planos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lune Hosting</h1>
+        <div class="header-buttons">
+            <a href="index.html"><button>Início</button></a>
+            <a href="planos.html"><button>Planos</button></a>
+            <a href="documentos.html"><button>Documentos</button></a>
+            <a href="login.html"><button>Login</button></a>
+        </div>
+    </header>
+    <main>
+        <h1 class="desc-plan">Melhores Planos</h1>
+        <p class="desc-plan2">Comece gratuitamente e altere o seu plano sempre que precisar</p>
+        <div class="plans-container">
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h2 class="plan-title">Free</h2>
+                    <span class="plan-ram">
+                        <span class="ram-size">100 MB</span> <span class="ram-label"> RAM</span>
+                    </span>
+                </div>
+                <div class="plan-details">
+                    <p>
+                        <img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        0.25 vCPU
+                    </p>
+                    <p>
+                        <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        Armazenamento Ilimitado
+                    </p>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        Banda Ilimitada
+                    </p>
+                </div>
+                <div class="plan-footer">
+                    <p class="plan-price">R$<span>0.00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button">Grátis</button>
+                </div>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h2 class="plan-title">Bronze</h2>
+                    <span class="plan-ram">
+                        <span class="ram-size">1 GB</span> <span class="ram-label"> RAM</span>
+                    </span>
+                </div>
+                <div class="plan-details">
+                    <p>
+                        <img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        0,5 vCPU
+                    </p>
+                    <p>
+                        <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        SSD NVMe Empresarial
+                    </p>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        Banda Ilimitada
+                    </p>
+                </div>
+                <div class="plan-footer">
+                    <p class="plan-price">R$<span>5,00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button">Selecionar</button>
+                </div>
+            </div>
+
+            <div class="plan-card3">
+                <div class="plan-header">
+                    <h2 class="plan-title" id="iron-title">Iron</h2>
+                    <span class="plan-ram">
+                        <span class="ram-size">4 GB</span> <span class="ram-label"> RAM</span>
+                    </span>
+                </div>
+                <div class="plan-details">
+                    <p>
+                        <img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        1 vCPU
+                    </p>
+                    <p>
+                        <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        SSD NVMe Empresarial
+                    </p>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                        Banda Ilimitada
+                    </p>
+                    <input id="plan-slider" type="range" min="0" max="4" step="1" value="0" />
+                </div>
+                <div class="plan-footer">
+                    <p class="plan-price">R$<span id="iron-price">10,00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button">Selecionar</button>
+                </div>
+            </div>            
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>VS Code</h3>
+                <p>Download para:</p>
+                <div class="download-buttons">
+                    <img src="https://img.icons8.com/?size=512&id=108792&format=png" alt="Win">
+                    <img src="https://img.icons8.com/ios_filled/512/FFFFFF/mac-os.png" alt="Mac">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124995.png" alt="Linux">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="#">Planos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Brand</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Como Hospedar?</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Formas de pagamento</h3>
+                <div class="payment-icons">
+                    <img src="https://img.icons8.com/color/512/pix.png" alt="Pix">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png" alt="Cartão de Crédito">
+                    <img src="https://logospng.org/download/mercado-pago/logo-mercado-pago-icone-1024.png" alt="Mercado Pago">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
+        </div>
+    </footer>    
+</body>
+</html>
+
+<script>
+    const slider = document.getElementById('plan-slider');
+    const planTitle = document.getElementById('iron-title');
+    const planPrice = document.getElementById('iron-price');
+    const planCard = document.querySelector('.plan-card3');
+
+    const plans = [
+        { name: 'Iron', price: '10,00', gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
+        { name: 'Gold', price: '20,00', gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
+        { name: 'Diamond', price: '30,00', gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
+        { name: 'Ruby', price: '40,00', gradient: 'linear-gradient(to right, #530202, #0d0d0d)' },
+        { name: 'Kriptonita', price: '150,00', gradient: 'linear-gradient(to right, #025324, #0d0d0d)' },
+    ];
+
+    slider.addEventListener('input', () => {
+        const selectedPlan = plans[slider.value];
+        planTitle.textContent = selectedPlan.name;
+        planPrice.textContent = selectedPlan.price;
+        planCard.style.background = selectedPlan.gradient;
+    });
+</script>

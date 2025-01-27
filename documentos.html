@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lune Hosting | Documentação</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c24;
+            color: #ffffff;
+            display: flex;
+            margin: 0;
+        }
+
+        .active {
+            background-color: #1c1c24;
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: #1c1c24;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #2d2d3a00;
+        }
+
+        .category {
+            color: #aaa;
+            margin-top: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        .documentation h2 {
+            margin-top: 20px;
+        }
+
+        .documentation {
+            display: flex;
+            flex-direction: column;
+            align-items:first baseline;
+            margin-top: 80px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .documentation2 {
+            display: flex;
+            flex-direction: column;
+            align-items:first baseline;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        main.content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .documentation li {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border: 1px solid #7c7c7c;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .documentation li:hover {
+            background-color: #2d2d3a;
+        }
+
+        .documentation li::before {
+            content: ">";
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-right: 10px;
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            background-color: #171717;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(69, 69, 69, 0.1);
+            overflow: hidden;
+        }
+
+        .language-selector select {
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            outline: none;
+            cursor: pointer;
+            width: 150px;
+            border-radius: 5px;
+        }
+
+        .language-selector:after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #333;
+            pointer-events: none;
+        }
+
+        .language-selector select:focus {
+            border-color: #4CAF50;
+        }
+
+        .language-selector select option {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+
+        .language-selector select option:hover {
+            background-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="language-selector">
+            <select>
+                <option>🇧🇷 PT</option>
+                <option>🇺🇸 EN</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Retoarnar ↩️</a></li>
+                <li class="category">SUPORTE</li>
+                <li><a href="#">💽 Como Hospedar</a></li>
+                <li><a href="#">📜 Linguagens</a></li>
+                <li><a href="#">🔗 Integrações</a></li>
+                <li><a href="#">❓ Perguntas Frequentes (FAQ)</a></li>
+                <li><a href="#">⚒️ Comandos</a></li>
+                <li><a href="#">💰 Doações</a></li>
+                <li class="category">CONFIGURAR</li>
+                <li><a href="#">⚙️ lune.config</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="documentation">
+        <h1>Seja Bem-Vindo(a) à documentação da Lune Hosting.</h1>
+        <section class="documentation2">
+            <h2>📖 Sobre a Documentação</h2>
+            <ul>
+                <li>Objetivos</li>
+                <li>Abrangente</li>
+                <li>Acessível</li>
+                <li>Conteúdo Destacado</li>
+            </ul>
+        </section>        
+    </main>
+</body>
+</html>
