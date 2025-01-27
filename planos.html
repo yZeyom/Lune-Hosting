@@ -82,18 +82,18 @@
                     </span>
                 </div>
                 <div class="plan-details">
-                    <p>
+                    <p id="cpu-info">
                         <img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
                         1 vCPU
                     </p>
-                    <p>
+                    <p id="storage-info">
                         <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
                         SSD NVMe Empresarial
                     </p>
-                    <p>
+                    <p id="network-info">
                         <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
                         Banda Ilimitada
-                    </p>
+                    </p>                                      
                     <input id="plan-slider" type="range" min="0" max="4" step="1" value="0" />
                 </div>
                 <div class="plan-footer">
@@ -153,13 +153,16 @@
     const planTitle = document.getElementById('iron-title');
     const planPrice = document.getElementById('iron-price');
     const planCard = document.querySelector('.plan-card3');
+    const planCpu = document.getElementById('cpu-info');
+    const planStorage = document.getElementById('storage-info');
+    const planNet = document.getElementById('network-info');
 
     const plans = [
-        { name: 'Iron', price: '10,00', gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
-        { name: 'Gold', price: '20,00', gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
-        { name: 'Diamond', price: '30,00', gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
-        { name: 'Ruby', price: '40,00', gradient: 'linear-gradient(to right, #530202, #0d0d0d)' },
-        { name: 'Kriptonita', price: '150,00', gradient: 'linear-gradient(to right, #025324, #0d0d0d)' },
+        { name: 'Iron', price: '10,00', cpu: "1 vCPU", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
+        { name: 'Gold', price: '20,00', cpu: "2 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
+        { name: 'Diamond', price: '30,00', cpu: "4 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
+        { name: 'Ruby', price: '40,00', cpu: "6 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #530202, #0d0d0d)' },
+        { name: 'Kriptonita', price: '150,00', cpu: "12 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #025324, #0d0d0d)' },
     ];
 
     slider.addEventListener('input', () => {
@@ -167,5 +170,8 @@
         planTitle.textContent = selectedPlan.name;
         planPrice.textContent = selectedPlan.price;
         planCard.style.background = selectedPlan.gradient;
+        planCpu.innerHTML = `<img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.cpu}`;
+        planStorage.innerHTML = `<img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.storage}`;
+        planNet.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.network}`;
     });
 </script>
