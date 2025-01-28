@@ -189,6 +189,8 @@ main p {
     transition: background-color 0.3s ease;
 }
 
+
+
 .hosting-btn {
     color: #000000;
     background-color: #ffffff;
@@ -204,9 +206,17 @@ main p {
     background-color: #d0d0d0;
 }
 
-.deschost {
-    font-weight: bold;
+.deschost11 {
     color: #a8a8a8;
+}
+
+.deschost22 {
+    color: #a8a8a8;
+}
+
+.deschost3 {
+    color: #a8a8a8;
+    text-align: left;
 }
 
 .free-button:hover {
@@ -382,7 +392,7 @@ main p {
     margin-top: 100px;
 }
 
-.deschost {
+.deschost11 {
     max-width: 600px;
     margin-top: 10px;
 }
@@ -392,7 +402,7 @@ main p {
     margin-top: 80px;
 }
 
-.deschost2 {
+.deschost22 {
     max-width: 600px;
     margin-top: 10px;
 }
