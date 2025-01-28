@@ -8,12 +8,22 @@
 </head>
 <body>
     <header>
-        <h1>Lune Hosting</h1>
+        <h1>
+            <img src="https://i.imgur.com/feIQmi4.png" alt="Logo Lune" style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px;">
+            Lune Hosting
+        </h1>
         <div class="header-buttons">
             <a href="index.html"><button>Início</button></a>
             <a href="planos.html"><button>Planos</button></a>
             <a href="documentos.html"><button>Documentos</button></a>
-            <a href="login.html"><button>Login</button></a>
+            <div class="header-buttons">
+                <a href="login.html" id="loginButton">
+                    <button>Login</button>
+                </a>
+            </div>            
+            <a href="dashboard.html" id="dashboardButton" style="display: none;">
+                <button class="git-login">Dashboard</button>
+            </a>
         </div>
     </header>
     <main>
@@ -34,7 +44,7 @@
                     </p>
                     <p>
                         <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Armazenamento Ilimitado
+                        Armazenamento Limitado
                     </p>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
@@ -61,7 +71,7 @@
                     </p>
                     <p>
                         <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        SSD NVMe Empresarial
+                        2GB Armazenamento NVMe
                     </p>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
@@ -70,7 +80,7 @@
                 </div>
                 <div class="plan-footer">
                     <p class="plan-price">R$<span>5,00</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <button class="selecionargold-button">Selecionar</button>
                 </div>
             </div>
 
@@ -88,7 +98,7 @@
                     </p>
                     <p id="storage-info">
                         <img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        SSD NVMe Empresarial
+                        4 GB Armazenamento NVMe
                     </p>
                     <p id="network-info">
                         <img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
@@ -98,7 +108,7 @@
                 </div>
                 <div class="plan-footer">
                     <p class="plan-price">R$<span id="iron-price">10,00</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <button class="selecionariron-button">Selecionar</button>
                 </div>
             </div>            
                 </div>
@@ -159,11 +169,11 @@
     const ram = document.querySelector('.ram-size2');
 
     const plans = [
-        { name: 'Iron', price: '10,00', ram: "2 GB", cpu: "1 vCPU", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
-        { name: 'Gold', price: '20,00', ram: "4 GB", cpu: "2 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
-        { name: 'Diamond', price: '30,00', ram: "8 GB", cpu: "4 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
-        { name: 'Ruby', price: '40,00', ram: "16 GB", cpu: "8 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #4b0000, #0d0d0d)' },
-        { name: 'Kriptonita ', price: '50,00', ram: "32 GB", cpu: "16 vCPUs", storage: "SSD NVMe Empresarial", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #004b1a, #0d0d0d)' },
+        { name: 'Iron', price: '10,00', ram: "2 GB", cpu: "1 vCPU", storage: "4 GB Armazenamento NVMe", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #232323, #0d0d0d)' },
+        { name: 'Gold', price: '20,00', ram: "4 GB", cpu: "2 vCPUs", storage: "8 GB Armazenamento NVMe", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #533d02, #0d0d0d)' },
+        { name: 'Diamond', price: '30,00', ram: "8 GB", cpu: "4 vCPUs", storage: "12 GB Armazenamento NVMe", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #024d53, #0d0d0d)' },
+        { name: 'Ruby', price: '40,00', ram: "16 GB", cpu: "8 vCPUs", storage: "16 GB Armazenamento NVMe", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #4b0000, #0d0d0d)' },
+        { name: 'Kriptonita ', price: '50,00', ram: "32 GB", cpu: "16 vCPUs", storage: "32 GB Armazenamento NVMe", network: "Banda Ilimitada", gradient: 'linear-gradient(to right, #004b1a, #0d0d0d)' },
     ];
 
     slider.addEventListener('input', () => {
@@ -176,5 +186,22 @@
         planStorage.textContent = selectedPlan.storage;
         planNet.textContent = selectedPlan.network;
         planCard.style.background = selectedPlan.gradient;
+
+        planCpu.innerHTML = `<img src="https://icons.iconarchive.com/icons/iconsmind/outline/512/CPU-icon.png" alt="CPU icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.cpu}`;
+    planStorage.innerHTML = `<img src="https://cdn3.iconfinder.com/data/icons/sympletts-part-4/128/database-512.png" alt="Storage icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.storage}`;
+    planNet.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/76/76806.png" alt="Network icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"> ${selectedPlan.network}`;
+    });
+</script>
+
+<script>
+    const button = document.querySelector('.selecionargold-button');
+    const button2 = document.querySelector('.selecionariron-button');
+
+    button.addEventListener('click', () => {
+        window.location.href = 'pagamento.html';
+    });
+
+    button2.addEventListener('click', () => {
+        window.location.href = 'pagamento.html';
     });
 </script>

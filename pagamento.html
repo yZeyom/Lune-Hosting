@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #070707;
+            color: #ffffff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header-buttons button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #00000000;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons button:hover {
+            color: #6eff6e;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 2rem;
+            margin: 20px 0 10px;
+        }
+
+        main p {
+            font-size: 1rem;
+            margin: 0 0 20px;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 20px 0;
+        }
+
+        .payment-options button {
+            padding: 1rem 2rem;
+            margin-top: 20px;
+            font-weight: bold;
+            border: none;
+            background-color: #1a1a1a;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-options button:hover {
+            background-color: #333333;
+        }
+
+        .payment-form {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .payment-form.active {
+            display: block;
+        }
+
+        .payment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .payment-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .payment-form button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #6eff6e;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .payment-form button:hover {
+            background-color: #57d957;
+        }
+
+        .title-payment{
+            font-size: 50px;
+        }
+
+        .desc-payment {
+            font-size: 20px;
+            color: #c6c6c6;
+        }
+
+        .site-footer {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #f1f1f1;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="https://i.imgur.com/feIQmi4.png" alt="Logo Lune" style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px;">
+            Lune Hosting
+        </h1>
+        <div class="header-buttons">
+            <a href="index.html"><button>Início</button></a>
+            <a href="planos.html"><button>Planos</button></a>
+            <a href="documentos.html"><button>Documentos</button></a>
+            <div class="header-buttons">
+                <a href="login.html" id="loginButton">
+                    <button>Login</button>
+                </a>
+            </div>
+            
+            <a href="dashboard.html" id="dashboardButton" style="display: none;">
+                <button class="git-login">Dashboard</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1 class="title-payment">Quase lá!</h1>
+        <h1 class="desc-payment">Para que o plano seja ativado, selecione um método de pagamento.</h1>
+        <img src="https://logosmarcas.net/wp-content/uploads/2020/12/GitHub-Simbolo.png" 
+        alt="Wait" id="github-img" style="width: 200px; height: auto; margin: 20px 0; margin-top: 60px;">
+        <div class="payment-options">
+            <button onclick="showForm('pix')">PIX</button>
+            <button onclick="showForm('cartao')">Cartão de Crédito</button>
+            <button onclick="showForm('mercado')">Mercado Pago</button>
+        </div>
+
+        <div id="pix" class="payment-form">
+            <label for="cpf">Nome Completo:</label>
+            <input type="text" id="cpf" placeholder="Daniel Ferreira">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00">
+            <button>Gerar QR Code</button>
+        </div>
+
+        <div id="cartao" class="payment-form">
+            <label for="card-number">Número do Cartão:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+
+            <label for="card-name">Nome no Cartão:</label>
+            <input type="text" id="card-name" placeholder="Nome completo">
+
+            <label for="expiry">Data de Validade:</label>
+            <input type="text" id="expiry" placeholder="MM/AA">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="Ex: 332">
+
+            <label for="cvv">País:</label>
+            <input type="text" id="country" placeholder="Ex: Brasil">
+
+            <label for="cvv">Estado:</label>
+            <input type="text" id="state" placeholder="Ex: São Paulo">
+
+            <label for="cvv">Cidade:</label>
+            <input type="text" id="city" placeholder="Ex: Brasília">
+
+            <label for="cvv">Rua:</label>
+            <input type="text" id="road" placeholder="Ex: Rua dos Cantares">
+
+            <label for="cvv">Endereço:</label>
+            <input type="text" id="address" placeholder="Ex: Junqueira Amarelo">
+
+            <label for="cvv">Número:</label>
+            <input type="text" id="number" placeholder="Ex: 12">
+
+            <button>Efetuar Pagamento</button>
+        </div>
+
+        <div id="mercado" class="payment-form">
+            <p>Redirecionando para o Mercado Pago...</p>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>VS Code</h3>
+                <p>Download para:</p>
+                <div class="download-buttons">
+                    <img src="https://img.icons8.com/?size=512&id=108792&format=png" alt="Win">
+                    <img src="https://img.icons8.com/ios_filled/512/FFFFFF/mac-os.png" alt="Mac">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124995.png" alt="Linux">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="#">Planos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Brand</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Como Hospedar?</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Formas de pagamento</h3>
+                <div class="payment-icons">
+                    <img src="https://img.icons8.com/color/512/pix.png" alt="Pix">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png" alt="Cartão de Crédito">
+                    <img src="https://logospng.org/download/mercado-pago/logo-mercado-pago-icone-1024.png" alt="Mercado Pago">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -156,6 +156,28 @@ main p {
     color: #b3b3b3;
 }
 
+.selecionargold-button {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.selecionariron-button {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
 .free-button {
     color: #000000;
     background-color: #ffffff;

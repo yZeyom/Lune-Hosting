@@ -6,6 +6,7 @@
     <title>Lune Hosting | Login</title>
     <link rel="stylesheet" href="style.css">
     <style>
+
         .git-login {
             font-weight: bold;
             color: #000000;
@@ -16,7 +17,7 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background-color 0.3s ease;
-            margin-top: 120px;
+            margin-top: 20px;
             background-size: 16px 16px;
             padding-left: 24px;
         }
@@ -47,16 +48,27 @@
             color: #bdbdbd;
             font-weight: bold;
         }
+        
     </style>
 </head>
 <body>
     <header>
-        <h1>Lune Hosting</h1>             
+        <h1>
+            <img src="https://i.imgur.com/feIQmi4.png" alt="Logo Lune" style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px;">
+            Lune Hosting
+        </h1>           
         <div class="header-buttons">
             <a href="index.html"><button>Início</button></a>
             <a href="planos.html"><button>Planos</button></a>
             <a href="documentos.html"><button>Documentos</button></a>
-            <a href="login.html"><button>Login</button></a>
+            <div class="header-buttons">
+                <a href="login.html" id="loginButton">
+                    <button>Login</button>
+                </a>
+            </div>            
+            <a href="dashboard.html" id="dashboardButton" style="display: none;">
+                <button class="git-login">Dashboard</button>
+            </a>
         </div>
     </header>
     <main>
@@ -65,10 +77,12 @@
             <p class="desc-lo">Para realizar qualquer ação dentro do site</p>
             <p class="desc-lo2">você precisa se conectar com GitHub.</p>
             <a href="https://github.com/login/oauth/authorize?client_id=Ov23liKDMeACPWHnA2xa">
-                <button class="git-login">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon" style="width: 16px; height: 16px; margin-right: 8px;">
-                    Login GitHub
-                </button>
+                <a href="https://github.com/login/oauth/authorize?client_id=Ov23liKDMeACPWHnA2xa" id="loginButton">
+                    <button class="git-login">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon" style="width: 16px; height: 16px; margin-right: 8px;">
+                        Login GitHub
+                    </button>
+                </a>                
             </a>            
         </div>
     </main>
