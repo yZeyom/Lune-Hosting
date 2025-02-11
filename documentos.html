@@ -181,37 +181,106 @@
 <body>
     <aside class="sidebar">
         <div class="language-selector">
-            <select>
+            <select id="languageSelect">
                 <option>🇧🇷 PT</option>
                 <option>🇺🇸 EN</option>
             </select>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Retoarnar ↩️</a></li>
-                <li class="category">SUPORTE</li>
-                <li><a href="#">💽 Como Hospedar</a></li>
-                <li><a href="#">📜 Linguagens</a></li>
-                <li><a href="#">🔗 Integrações</a></li>
-                <li><a href="#">❓ Perguntas Frequentes (FAQ)</a></li>
-                <li><a href="#">⚒️ Comandos</a></li>
-                <li><a href="#">💰 Doações</a></li>
-                <li class="category">CONFIGURAR</li>
-                <li><a href="#">⚙️ lune.config</a></li>
+                <li><a href="index.html" id="returnLink">Retornar ↩️</a></li>
+                <li class="category" id="supportCategory">SUPORTE</li>
+                <li><a href="#" id="howToHost">💽 Como Hospedar</a></li>
+                <li><a href="#" id="languages">📜 Linguagens</a></li>
+                <li><a href="#" id="integrations">🔗 Integrações</a></li>
+                <li><a href="#" id="faq">❓ Perguntas Frequentes (FAQ)</a></li>
+                <li><a href="#" id="commands">⚒️ Comandos</a></li>
+                <li><a href="#" id="donations">💰 Doações</a></li>
+                <li class="category" id="configureCategory">CONFIGURAR</li>
+                <li><a href="#" id="luneConfig">⚙️ lune.config</a></li>
             </ul>
         </nav>
     </aside>
     <main class="documentation">
-        <h1>Seja Bem-Vindo(a) à documentação da Lune Hosting.</h1>
+        <h1 id="welcomeText">Seja Bem-Vindo(a) à documentação da Lune Hosting.</h1>
         <section class="documentation2">
-            <h2>📖 Sobre a Documentação</h2>
+            <h2 id="aboutText">📖 Sobre a Documentação</h2>
             <ul>
-                <li>Objetivos</li>
-                <li>Abrangente</li>
-                <li>Acessível</li>
-                <li>Conteúdo Destacado</li>
+                <li id="objectives">Objetivos</li>
+                <li id="comprehensive">Abrangente</li>
+                <li id="accessible">Acessível</li>
+                <li id="highlighted">Conteúdo Destacado</li>
             </ul>
         </section>        
     </main>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const languageSelect = document.getElementById("languageSelect");
+
+        const translations = {
+            "pt": {
+                "welcome": "Seja Bem-Vindo(a) à documentação da Lune Hosting.",
+                "about": "📖 Sobre a Documentação",
+                "objectives": "Objetivos",
+                "comprehensive": "Abrangente",
+                "accessible": "Acessível",
+                "highlighted": "Conteúdo Destacado",
+                "return": "Retornar ↩️",
+                "support": "SUPORTE",
+                "howToHost": "💽 Como Hospedar",
+                "languages": "📜 Linguagens",
+                "integrations": "🔗 Integrações",
+                "faq": "❓ Perguntas Frequentes (FAQ)",
+                "commands": "⚒️ Comandos",
+                "donations": "💰 Doações",
+                "configure": "CONFIGURAR",
+                "luneConfig": "⚙️ lune.config"
+            },
+            "en": {
+                "welcome": "Welcome to Lune Hosting Documentation.",
+                "about": "📖 About the Documentation",
+                "objectives": "Objectives",
+                "comprehensive": "Comprehensive",
+                "accessible": "Accessible",
+                "highlighted": "Highlighted Content",
+                "return": "Return ↩️",
+                "support": "SUPPORT",
+                "howToHost": "💽 How to Host",
+                "languages": "📜 Languages",
+                "integrations": "🔗 Integrations",
+                "faq": "❓ Frequently Asked Questions (FAQ)",
+                "commands": "⚒️ Commands",
+                "donations": "💰 Donations",
+                "configure": "CONFIGURE",
+                "luneConfig": "⚙️ lune.config"
+            }
+        };
+
+        function updateLanguage(lang) {
+            document.getElementById("welcomeText").textContent = translations[lang]["welcome"];
+            document.getElementById("aboutText").textContent = translations[lang]["about"];
+            document.getElementById("objectives").textContent = translations[lang]["objectives"];
+            document.getElementById("comprehensive").textContent = translations[lang]["comprehensive"];
+            document.getElementById("accessible").textContent = translations[lang]["accessible"];
+            document.getElementById("highlighted").textContent = translations[lang]["highlighted"];
+            document.getElementById("returnLink").textContent = translations[lang]["return"];
+            document.getElementById("supportCategory").textContent = translations[lang]["support"];
+            document.getElementById("howToHost").textContent = translations[lang]["howToHost"];
+            document.getElementById("languages").textContent = translations[lang]["languages"];
+            document.getElementById("integrations").textContent = translations[lang]["integrations"];
+            document.getElementById("faq").textContent = translations[lang]["faq"];
+            document.getElementById("commands").textContent = translations[lang]["commands"];
+            document.getElementById("donations").textContent = translations[lang]["donations"];
+            document.getElementById("configureCategory").textContent = translations[lang]["configure"];
+            document.getElementById("luneConfig").textContent = translations[lang]["luneConfig"];
+        }
+
+        languageSelect.addEventListener("change", function () {
+            const selectedLang = languageSelect.value === "🇧🇷 PT" ? "pt" : "en";
+            updateLanguage(selectedLang);
+        });
+    });
+</script>

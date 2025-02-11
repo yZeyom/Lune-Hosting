@@ -36,7 +36,7 @@ app.get('/callback', async (req, res) => {
                 Authorization: `Bearer ${accessToken}`
             }
         });
-
+webkitURL
         const username = userResponse.data.login;
         const avatarUrl = userResponse.data.avatar_url;
 
