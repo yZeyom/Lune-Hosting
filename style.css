@@ -103,6 +103,28 @@ main p {
     color: transparent;
 }
 
+.planteste-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -0rem;
+    background: white; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.plan2-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -0rem;
+    background-color: yellow;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
 .plan-ram {
     font-size: 0.7rem;
     align-items: baseline;
@@ -113,6 +135,12 @@ main p {
     font-weight: bold;
     font-size: 1.2rem;
     color: #78d57b;
+}
+
+.ram2-size {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
 .ram-size2 {
@@ -188,8 +216,6 @@ main p {
     font-size: 1rem;
     transition: background-color 0.3s ease;
 }
-
-
 
 .hosting-btn {
     color: #000000;
@@ -417,4 +443,54 @@ main p {
     font-size: 1rem;
     transition: background-color 0.3s ease;
     margin-top: 120px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #323232;
+    min-width: 150px;
+    color: white !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content * {
+    color: white !important;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #202020;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+
+.dropdown-content a img.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
 }
