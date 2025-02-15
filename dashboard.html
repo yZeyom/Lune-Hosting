@@ -93,9 +93,12 @@
             <a href="documentos.html"><button>Documentos</button></a>
         
             <div class="header-buttons">
-                <a href="login.html" id="loginButton">
-                    <button>Painel</button>
-                </a>
+                <button id="loginButton">Painel</button>
+                <script>
+                    document.getElementById("loginButton").addEventListener("click", function() {
+                        window.location.href = "https://panel.lunehosting.shop";
+                    });
+                </script>
             </div>
         
             <a href="dashboard.html" id="dashboardButton" style="display: none;">
