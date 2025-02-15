@@ -72,6 +72,18 @@ main p {
     text-align: left;
 }
 
+.plan-card2 {
+    background: linear-gradient(to right, #232323, #0d0d0d);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
 .plan-card3 {
     background: linear-gradient(to right, #232323, #0d0d0d);
     border-radius: 12px;
@@ -118,7 +130,7 @@ main p {
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: -0rem;
-    background-color: yellow;
+    background-color: rgb(255, 255, 255);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
