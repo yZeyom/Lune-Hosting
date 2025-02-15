@@ -570,3 +570,72 @@ body {
 		min-width: 420px;
 	}
 }
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1200;
+	left: 150;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .modal-content {
+	background: white;
+	padding: 50px;
+	border-radius: 8px;
+	width: 400px;
+	text-align: center;
+	position: relative;
+  }
+  
+  .close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 22px;
+	cursor: pointer;
+  }
+  
+  .modal-content label {
+	display: block;
+	text-align: left;
+	margin-top: 10px;
+	font-weight: bold;
+  }
+  
+  .modal-content input,
+  .modal-content textarea,
+  .modal-content select {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+  }
+
+  .modal-buttons {
+	margin-top: 15px;
+  }
+  
+  .modal-buttons button {
+	padding: 10px 15px;
+	margin: 5px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  #cancelarBtn {
+	background: red;
+	color: white;
+  }
+  
+  #anunciarBtn {
+	background: green;
+	color: white;
+  }  

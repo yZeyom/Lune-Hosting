@@ -8,71 +8,13 @@
   <!-- Meu CSS -->
   <link rel="stylesheet" href="style_admin.css">
   <title>Lune Hosting | Admin</title>
-  <style>
-    body {
-      background: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    #login-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    #login-modal .login-container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    #login-modal input {
-      width: 90%;
-      padding: 8px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-    #login-modal button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #3498db;
-      color: #fff;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    #site-content {
-      display: none;
-    }
-  </style>
 </head>
 <body>
-  <!-- Modal de Login -->
-  <div id="login-modal">
-    <div class="login-container">
-      <h2>Login</h2>
-      <form id="login-form">
-        <input type="text" id="username" placeholder="Usuário" required>
-        <input type="password" id="password" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-      </form>
-      <p id="login-error" style="color: red; display: none;">Credenciais incorretas</p>
-    </div>
-  </div>
-
+  <!-- Conteúdo Administrativo (oculto até o login) -->
   <div id="site-content">
     <!-- SIDEBAR -->
     <section id="sidebar">
-      <a href="index.html" class="brand">
+      <a href="#" class="brand">
         <i class='bx bxs-smile'></i>
         <span class="text">Lune Hosting</span>
       </a>
@@ -153,10 +95,10 @@
       <main>
         <div class="head-title">
           <div class="left">
-            <h1>Dashboard</h1>
+            <h1>Anúncios</h1>
             <ul class="breadcrumb">
               <li>
-                <a href="#">Dashboard</a>
+                <a href="#">Anúncios</a>
               </li>
               <li><i class='bx bx-chevron-right'></i></li>
               <li>
@@ -168,24 +110,9 @@
 
         <ul class="box-info">
           <li>
-            <i class='bx bxs-calendar-check'></i>
             <span class="text">
               <h3>0</h3>
-              <p>Vendas</p>
-            </span>
-          </li>
-          <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-              <h3>0</h3>
-              <p>Visitas</p>
-            </span>
-          </li>
-          <li>
-            <i class='bx bxs-dollar-circle'></i>
-            <span class="text">
-              <h3>R$00,00</h3>
-              <p>Total</p>
+              <p>Anúncios</p>
             </span>
           </li>
         </ul>
@@ -193,14 +120,14 @@
         <div class="table-data">
           <div class="order">
             <div class="head">
-              <h3>Pedidos recentes</h3>
+              <h3>Anúncios</h3>
               <i class='bx bx-search'></i>
               <i class='bx bx-filter'></i>
             </div>
             <table>
               <thead>
                 <tr>
-                  <th>Usuário</th>
+                  <th>ID</th>
                   <th>Data</th>
                   <th>Status</th>
                 </tr>
@@ -208,73 +135,82 @@
               <tbody>
                 <tr>
                   <td>
-                    <img src="https://4kwallpapers.com/images/wallpapers/rukia-kuchiki-3840x2160-10498.png" alt="Usuário">
-                    <p>yZeyom</p>
+                    <p>#8a3a13D</p>
                   </td>
                   <td>14-02-2025</td>
-                  <td><span class="status pending">Pendente</span></td>
+                  <td><span class="status process">Pausado</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="todo">
             <div class="head">
-              <h3>Todos</h3>
+              <h3>Gerenciar</h3>
               <i class='bx bx-plus'></i>
               <i class='bx bx-filter'></i>
             </div>
             <ul class="todo-list">
-              <li class="not-completed">
-                <p>yZeyom</p>
-                <i class='bx bx-dots-vertical-rounded'></i>
+                <p>#8a3a13D <i class='bx bx-dots-vertical-rounded'></i> </p>
               </li>
             </ul>
           </div>
         </div>
+        <!-- Modal para adicionar anúncio -->
+<div id="addAnuncioModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Adicionar Anúncio</h2>
+      
+      <label for="titulo">Título do Anúncio:</label>
+      <input type="text" id="titulo" placeholder="Digite o título do anúncio">
+  
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" placeholder="Digite a mensagem"></textarea>
+  
+      <label for="prioridade">Prioridade:</label>
+      <select id="prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+  
+      <div class="modal-buttons">
+        <button id="cancelarBtn">Cancelar</button>
+        <button id="anunciarBtn">Anunciar</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("addAnuncioModal");
+      const openModalBtn = document.querySelector(".bx-plus"); 
+      const closeModalBtn = document.querySelector(".close");
+      const cancelBtn = document.getElementById("cancelarBtn");
+  
+      openModalBtn.addEventListener("click", function () {
+        modal.style.display = "block";
+      });
+
+      closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+  
+      cancelBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+  
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>  
       </main>
       <!-- MAIN -->
     </section>
     <!-- CONTENT -->
   </div>
-
-  <script>
-    // Validação de login
-    document.addEventListener("DOMContentLoaded", function () {
-    var loginModal = document.getElementById("login-modal");
-    var siteContent = document.getElementById("site-content");
-    var loginError = document.getElementById("login-error");
-    var loginForm = document.getElementById("login-form");
-    var logoutButton = document.querySelector(".logout");
-
-    function checkLogin() {
-        if (localStorage.getItem("loggedIn") === "true") {
-            loginModal.style.display = "none";
-            siteContent.style.display = "block";
-        }
-    }
-
-    loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        if (username === "admin" && password === "123") {
-            localStorage.setItem("loggedIn", "true");
-            loginModal.style.display = "none";
-            siteContent.style.display = "block";
-        } else {
-            loginError.style.display = "block";
-        }
-    });
-
-    logoutButton.addEventListener("click", function () {
-        localStorage.removeItem("loggedIn");
-        location.reload();
-    });
-
-    checkLogin();
-});
-  </script>
-  <script src="script.js"></script>
 </body>
 </html>
