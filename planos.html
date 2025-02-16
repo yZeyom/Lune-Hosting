@@ -52,6 +52,7 @@
     <main>
         <h1 class="desc-plan">Melhores Planos</h1>
         <p class="desc-plan2">Teste gratuitamente e altere o seu plano sempre que precisar</p>
+        <p class="desc-plan2">Apenas os planos para hospedagem de jogos como Minecraft estão disponíveis neste momento. Nossos planos para bots está em manutenção.</p>
         <div class="plans-container">
             <div class="plan-card">
                 <div class="plan-header">
@@ -176,7 +177,21 @@
         <div class="footer-bottom">
             <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
         </div>
-    </footer>    
+    </footer>   
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=ASNolNlpVykBfRlKLeUj45P-G16GMfZSyX5j3pwa00S8YZmjL9yuBFBco6_Hs9NAx7kLS-m8ujJYuYgK&currency=BRL"></script>
+    <script>
+        document.querySelectorAll('.free-button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const planElement = event.target.closest('.plan-card, .plan-card3');
+            const planName = encodeURIComponent(planElement.querySelector('.plan-title').innerText);
+            const planPrice = encodeURIComponent(planElement.querySelector('.plan-price span').innerText);
+            
+            window.location.href = `pagamento.html?plano=${planName}&preco=${planPrice}`;
+        });
+    });
+    </script>
+
 </body>
 </html>
 

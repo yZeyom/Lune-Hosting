@@ -49,48 +49,13 @@
             </a>
         </div>
     </header>
+    
+    <div id="paypal-button-container"></div>
+
     <main>
         <h1 class="desc-plan">Melhores Planos</h1>
         <p class="desc-plan2"> </p>
         <div class="plans-container">
-            <div class="plan-card">
-                <div class="plan-header">
-                    <h2 class="planteste-title">Teste</h2>
-                    <span class="plan-ram">
-                        <span class="ram-size">800 MB</span> <span class="ram-label"> RAM</span>
-                    </span>
-                </div>
-                <div class="plan-details">
-                    <p>
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="location" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Hospedado no Brasil
-                    </p>
-                    <p>
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="players" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Até 2 jogadores
-                    </p>
-                    <p>
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="plugins-mods" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Até 3 plugins/mods
-                    </p>
-                    <p>
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="plugins-mods" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        5GB de SSD
-                    </p>
-                    <p>
-                        <img src="https://cdn.pixabay.com/photo/2016/01/20/18/35/x-1152114_960_720.png" alt="backup" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Backups automáticos
-                    </p>
-                    <p>
-                        <img src="https://cdn.pixabay.com/photo/2016/01/20/18/35/x-1152114_960_720.png" alt="backup" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        Fórum
-                    </p>
-                </div>
-                <div class="plan-footer">
-                    <p class="plan-price">Grátis por 7 dias</p>
-                    <button class="free-button">Começar</button>
-                </div>
-            </div>
 
             <div class="plan-card3">
                 <div class="plan-header">
@@ -252,13 +217,20 @@
             <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
         </div>
     </footer>    
+   
+    <script src="https://www.paypal.com/sdk/js?client-id=ASNolNlpVykBfRlKLeUj45P-G16GMfZSyX5j3pwa00S8YZmjL9yuBFBco6_Hs9NAx7kLS-m8ujJYuYgK&currency=BRL"></script>
+    <script>
+        document.querySelectorAll('.free-button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const planElement = event.target.closest('.plan-card, .plan-card2, .plan-card3');
+                const planName = encodeURIComponent(planElement.querySelector('.plan2-title').innerText);
+                const planPrice = encodeURIComponent(planElement.querySelector('.plan-price span').innerText);
+                
+                window.location.href = `pagamento.html?plano=${planName}&preco=${planPrice}`;
+            });
+        });
+    </script>
+    
+
 </body>
 </html>
-
-<script>
-    const button = document.querySelector('.free-button');
-
-    button.addEventListener('click', () => {
-        window.location.href = 'pagamento.html';
-    });
-</script>
