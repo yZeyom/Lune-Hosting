@@ -75,59 +75,7 @@
         <div class="footer-bottom">
             <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
         </div>
-    </footer>  
-
-    <script>
-        document.querySelector(".signup-form").addEventListener("submit", async function(event) {
-            event.preventDefault();
-        
-            const firstName = document.getElementById("first-name").value.trim();
-            const lastName = document.getElementById("last-name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const username = document.getElementById("username").value.trim();
-            
-            if (!firstName || !lastName || !email || !password || !username) {
-                alert("Por favor, preencha todos os campos obrigatórios!");
-                return;
-            }
-        
-            const apiKey = "ptlc_2HO9lAdgD8mniC98xqQa6HixkYCsp0sRL5gRlvgaCeT";
-            const apiUrl = "https://panel.lunehosting.shop/api/application/users";
-    
-            const userData = {
-                username: username,
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                password: password,
-                language: "en"
-            };
-        
-            try {
-                const response = await fetch(apiUrl, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${apiKey}`,
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify(userData)
-                });
-        
-                const result = await response.json();
-        
-                if (response.ok) {
-                    alert("Conta criada com sucesso no painel Pterodactyl!");
-                } else {
-                    alert(`Erro ao criar conta: ${result.errors ? result.errors[0].detail : "Erro desconhecido"}`);
-                }
-            } catch (error) {
-                console.error("Erro ao conectar-se à API:", error);
-                alert("Erro ao conectar-se ao servidor.");
-            }
-        });
-    </script>        
+    </footer>         
 
     <style>
         .signup-form {
