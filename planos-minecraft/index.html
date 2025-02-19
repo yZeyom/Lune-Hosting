@@ -222,7 +222,7 @@
                 const planName = encodeURIComponent(planElement.querySelector('.plan2-title').innerText);
                 const planPrice = encodeURIComponent(planElement.querySelector('.plan-price span').innerText);
                 
-                window.location.href = `pagamento.html?plano=${planName}&preco=${planPrice}`;
+                window.location.href = `../pagamento/?plano=${planName}&preco=${planPrice}`;
             });
         });
     </script>

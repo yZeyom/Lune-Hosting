@@ -158,7 +158,7 @@
             const planName = encodeURIComponent(planElement.querySelector('.plan-title').innerText);
             const planPrice = encodeURIComponent(planElement.querySelector('.plan-price span').innerText);
             
-            window.location.href = `pagamento.html?plano=${planName}&preco=${planPrice}`;
+            window.location.href = `../pagamento/?plano=${planName}&preco=${planPrice}`;
         });
     });
     </script>
@@ -206,10 +206,10 @@
     const button2 = document.querySelector('.selecionariron-button');
 
     button.addEventListener('click', () => {
-        window.location.href = 'pagamento.html';
+        window.location.href = '../pagamento/';
     });
 
     button2.addEventListener('click', () => {
-        window.location.href = 'pagamento.html';
+        window.location.href = '../pagamento/';
     });
 </script>
