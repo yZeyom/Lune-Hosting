@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lune Hosting | Pagamento</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .side-frame {
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            transform: translateY(-50%);
+            width: 250px;
+            background-color: rgba(15, 15, 15, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .side-frame h2 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .desc5 {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }   
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .cupom-container {
+            text-align: left;
+        }
+
+        .cupom-container input {
+            width: 80%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+        }
+
+        .cupom-container button {
+            margin-top: 8px;
+            padding: 8px;
+            width: 85%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cupom-container button:hover {
+            background-color: #218838;
+        }
+
+        .top-btn {
+            margin-top: 10px;
+            padding: 10px;
+            width: 85%;
+            background-color: #747474;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .top-btn:hover {
+            background-color: #585858;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>
+        <img src="https://i.imgur.com/feIQmi4.png" alt="Logo Lune" style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px;">
+        Lune Hosting
+    </h1>
+    <div class="header-buttons">
+        <a href="../inicio/"><button>Retornar ↩️</button></a>
+    </div>
+</header>
+
+<main>
+    <div class="side-frame">
+        <h2>Servidor Minecraft 2GB RAM</h2>
+        <p class="desc5">___________________</p>
+        <p> </p>
+        <p class="desc5">• Produto: R$0,00</p>
+        <p class="desc5">• Desconto: R$0,00</p>
+        <p class="desc5">___________________</p>
+        <p> </p>
+        <p class="desc5">• Total: R$0,00</p>
+        <p> </p>
+        <div class="cupom-container" >
+            <input style="text-align: left; font-weight: bold;" type="text" id="cupom" placeholder="CUPOM">
+        </div>
+        <div class="button-container">
+            <button class="top-btn" onclick="window.location.href='../pagamento/'">Continuar →</button>
+        </div>
+    </div>
+
+    <div id="paypal-button-container"></div>
+</main>
+
+<footer class="site-footer">
+    <p>Lune Hosting © 2025 - Todos os direitos reservados. <a href="#">Termos de Serviço</a> | <a href="#">Políticas</a></p>
+</footer> 
+
+<script>
+    function aplicarCupom() {
+        const cupom = document.getElementById("cupom").value.trim();
+        if (cupom === "DESCONTO10") {
+            alert("Cupom aplicado! 10% de desconto.");
+        } else {
+            alert("Cupom inválido.");
+        }
+    }
+</script>
+</body>
+</html>
