@@ -87,8 +87,8 @@
                     </p>
                 </div>
                 <div class="plan-footer">
-                    <p class="plan-price">R$<span id="iron-price">12,50</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <p class="plan-price">R$<span id="iron-price">22,50</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button" onclick="adicionarAoCarrinho('Servidor Minecraft 2GB RAM', 22.50)">Adicionar ao Carrinho</button>
                 </div>
             </div>  
 
@@ -126,8 +126,8 @@
                     </p>
                 </div>
                 <div class="plan-footer">
-                    <p class="plan-price">R$<span id="iron-price">25,00</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <p class="plan-price">R$<span id="iron-price">45,00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button" onclick="adicionarAoCarrinho('Servidor Minecraft 4GB RAM', 45.00)">Adicionar ao Carrinho</button>
                 </div>
             </div>  
 
@@ -165,8 +165,8 @@
                     </p>
                 </div>
                 <div class="plan-footer">
-                    <p class="plan-price">R$<span id="iron-price">50,00</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <p class="plan-price">R$<span id="iron-price">70,00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button" onclick="adicionarAoCarrinho('Servidor Minecraft 8GB RAM', 70.00)">Adicionar ao Carrinho</button>
                 </div>
             </div>
 
@@ -174,7 +174,7 @@
                 <div class="plan-header">
                     <h2 class="plan2-title">Avançado</h2>
                     <span class="plan-ram">
-                        <span class="ram-size">32 GB</span> <span class="ram-label"> RAM</span>
+                        <span class="ram-size">16 GB</span> <span class="ram-label"> RAM</span>
                     </span>
                 </div>
                 <div class="plan-details">
@@ -184,7 +184,7 @@
                     </p>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="ssd" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                        80GB de SSD
+                        40GB de SSD
                     </p>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="javabed" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
@@ -204,8 +204,8 @@
                     </p>
                 </div>
                 <div class="plan-footer">
-                    <p class="plan-price">R$<span id="iron-price">150,00</span> <small class="plan-month">/mês</small></p>
-                    <button class="free-button">Selecionar</button>
+                    <p class="plan-price">R$<span id="iron-price">120,00</span> <small class="plan-month">/mês</small></p>
+                    <button class="free-button" onclick="adicionarAoCarrinho('Servidor Minecraft 16GB RAM', 120.00)">Adicionar ao Carrinho</button>
                 </div>
             </div>       
 
@@ -264,8 +264,11 @@
                 window.location.href = `../carrinho/?plano=${planName}&preco=${planPrice}`;
             });
         });
+
+        function adicionarAoCarrinho(nome, preco) {
+            window.location.href = `../carrinho/?produto=${encodeURIComponent(nome)}&preco=${preco}`;
+        }
     </script>
-    
 
 </body>
 </html>

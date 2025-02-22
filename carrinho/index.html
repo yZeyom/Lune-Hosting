@@ -110,13 +110,11 @@
 
 <main>
     <div class="side-frame">
-        <h2>Servidor Minecraft 2GB RAM</h2>
-        <p class="desc5">___________________</p>
+        <h2>???</h2>
+        <p class="desc5">____________________________</p>
         <p> </p>
         <p class="desc5">• Produto: R$0,00</p>
         <p class="desc5">• Desconto: R$0,00</p>
-        <p class="desc5">___________________</p>
-        <p> </p>
         <p class="desc5">• Total: R$0,00</p>
         <p> </p>
         <div class="cupom-container" >
@@ -135,14 +133,44 @@
 </footer> 
 
 <script>
-    function aplicarCupom() {
-        const cupom = document.getElementById("cupom").value.trim();
-        if (cupom === "DESCONTO10") {
-            alert("Cupom aplicado! 10% de desconto.");
-        } else {
-            alert("Cupom inválido.");
-        }
+    function getParametro(nome) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(nome);
     }
+
+    const produto = getParametro('produto') || '???';
+    const preco = getParametro('preco') || '0.00';
+
+    document.querySelector('.side-frame h2').innerText = produto;
+    document.querySelectorAll('.desc5')[1].innerText = `• Produto: R$${parseFloat(preco).toFixed(2)}`;
+    document.querySelectorAll('.desc5')[3].innerText = `• Total: R$${parseFloat(preco).toFixed(2)}`;
+
+    function getParametro(nome) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(nome);
+    }
+
+    document.querySelector('.side-frame h2').innerText = produto;
+    document.querySelectorAll('.desc5')[1].innerText = `• Produto: R$${preco.toFixed(2)}`;
+    document.querySelectorAll('.desc5')[3].innerText = `• Total: R$${preco.toFixed(2)}`;
+
+    const cupomInput = document.getElementById('cupom');
+    const descontoElemento = document.querySelectorAll('.desc5')[2];
+    const totalElemento = document.querySelectorAll('.desc5')[3];
+
+    const cupons = {
+        "LUNEHOSTING": 10,
+    };
+
+    cupomInput.addEventListener('input', function() {
+        const cupomDigitado = cupomInput.value.trim().toUpperCase();
+        let desconto = cupons[cupomDigitado] || 0;
+        let precoFinal = Math.max(preco - desconto, 0);
+
+        descontoElemento.innerText = `• Desconto: -R$${desconto.toFixed(2)}`;
+        totalElemento.innerText = `• Total: R$${precoFinal.toFixed(2)}`;
+    });
 </script>
+
 </body>
 </html>
